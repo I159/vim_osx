@@ -19,7 +19,7 @@ Plugin 'git@github.com:tomtom/tlib_vim.git'
 Plugin 'git@github.com:vim-airline/vim-airline.git'
 Plugin 'git@github.com:jeetsukumaran/vim-buffergator.git'
 Plugin 'git@github.com:garbas/vim-snipmate.git'
-Plugin 'git@github.com:honza/vim-snippets.git'
+Plugin 'git@github.com:I159/vim-snippets.git'
 Plugin 'git@github.com:michalbachowski/vim-wombat256mod.git'
 Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
 Plugin 'git@github.com:tpope/vim-surround.git'
@@ -27,6 +27,7 @@ Plugin 'git@github.com:tpope/vim-eunuch.git'
 Plugin 'git@github.com:airblade/vim-gitgutter.git'
 Plugin 'git@github.com:scrooloose/nerdtree.git'
 Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
+Plugin 'git@github.com:elzr/vim-json.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
@@ -117,13 +118,15 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+nnoremap <leader> jf :execute '%!python -m json.tool'<CR>
+
 " System specific mappings
 if has('unix')
 	" Add line below
-	nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	"nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 	" TODO: define for Linux
 	" Add line above
-	nnoremap <A-O> :set paste<CR>m`<S-o><Esc>``:set nopaste<CR>
+	"nnoremap <A-O> :set paste<CR>m`<S-o><Esc>``:set nopaste<CR>
 	" Move line down <A-m>
 	nnoremap µ :m .+1<CR>==
 	" Move line up: <A-d>
@@ -132,9 +135,9 @@ if has('unix')
 	inoremap √ <c-r><c-o>+
 elseif has('macunix')
 	" Add line below <FN-o>
-	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	"nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
 	" Add line above <FN-S-o>
-	nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+	"nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
 	" Move line down <A-m>
 	nnoremap µ :m .+1<CR>==
 	" Move line up <A-d>
