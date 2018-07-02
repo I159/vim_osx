@@ -28,6 +28,7 @@ Plugin 'git@github.com:airblade/vim-gitgutter.git'
 Plugin 'git@github.com:scrooloose/nerdtree.git'
 Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
 Plugin 'git@github.com:elzr/vim-json.git'
+Plugin 'git@github.com:tarekbecker/vim-yaml-formatter.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
@@ -76,6 +77,8 @@ let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
 " NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build$', 'dist', 'vendor', '\.lock$']
+" Format yaml lists with extra
+let g:yaml_formatter_indent_collection=1
 " ----------------------- mappings ------------------------------
 
 " Normal mode
@@ -118,7 +121,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+" json autoformat
 nnoremap <leader> jf :execute '%!python -m json.tool'<CR>
+" yaml autoformat
+nnoremap <leader> yf :YAMLFormat<CR>
 
 " System specific mappings
 if has('unix')
