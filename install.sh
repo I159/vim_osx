@@ -24,9 +24,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 	ln -s $PWD/.vim $HOME/.vim
 	ln -s $PWD/.vimrc $HOME/.vimrc
-	ln -s $PWD/vim-pathogen/autoload/ $HOME/.vim/autoload
 
-	sudo pip install jedi
+    sudo pip install jedi
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 fi

@@ -20,8 +20,13 @@ let g:jedi#usages_command = "<leader>ju"
 let g:jedi#completions_command = "<C-Spase>"
 let g:jedi#rename_command = "<leader>jr"
 
-" AutoPEP8
-nnoremap <leader>8 :Autopep8<CR>
-let g:autopep8_aggressive=2
-"let g:autopep8_diff_type='vertical'
-let g:autopep8_disable_show_diff=1
+" Ale
+let g:ale_fixers = {'python': ['autopep8', 'isort', 'yapf']}
+let g:ale_linters = {'python': ['flake8', 'prospector', 'pylint']}
+let g:ale_completion_enabled = 1
+let g:ale_completion_delay = 1
+
+" Ale fix
+nnoremap <leader>fx :ALEFix <CR>
+" Ale go to definition
+nnoremap <leader>gd :ALEGoToDefinition <CR>

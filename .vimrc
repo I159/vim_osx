@@ -35,7 +35,6 @@ Plugin 'git@github.com:davidhalter/jedi-vim.git'
 Plugin 'git@github.com:jeetsukumaran/vim-indentwise.git'
 Plugin 'git@github.com:vim-python/python-syntax.git'
 Plugin 'git@github.com:w0rp/ale.git'
-Plugin 'git@github.com:tell-k/vim-autopep8.git'
 
 " Go specific
 Plugin 'git@github.com:fatih/vim-go.git'
