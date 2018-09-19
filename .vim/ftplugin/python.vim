@@ -2,10 +2,10 @@
 " ------------------- Settings ----------------------------
 
 " 80 symbols color column
-set colorcolumn=120
+set colorcolumn=89
 highlight ColorColumn ctermbg=233
 highlight OverLength ctermfg=244
-match OverLength /\%120v.*/
+match OverLength /\%89v.*/
 
 " Enable advanced python syntax
 let g:python_highlight_all = 1
@@ -21,10 +21,14 @@ let g:jedi#completions_command = "<C-Spase>"
 let g:jedi#rename_command = "<leader>jr"
 
 " Ale
-let g:ale_fixers = {'python': ['autopep8', 'isort', 'yapf']}
-let g:ale_linters = {'python': ['flake8', 'prospector', 'pylint']}
+let g:ale_fixers = {'python': ['isort', 'black']}
+let g:ale_linters = {'python': ['prospector', 'pylint', 'pydocstyle']}
 let g:ale_completion_enabled = 1
 let g:ale_completion_delay = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_set_highlights = 1
+let g:ale_lint_on_enter = 1
+
 
 " Ale fix
 nnoremap <leader>fx :ALEFix <CR>

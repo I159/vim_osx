@@ -50,6 +50,7 @@ colorscheme wombat256mod " Color scheme wombat256
 
 set nocompatible " Disable vi compatibility
 set nu " Set line numbers
+set backspace=2
 set confirm " Confirm save on exit
 set nowrap " lines will not wrap and only part of long lines will be displayed.
 set spell " Spell check
@@ -81,15 +82,23 @@ let g:yaml_formatter_indent_collection=1
 " ----------------------- mappings ------------------------------
 
 " Normal mode
+" Left
+nnoremap <C-h> <C-W><C-H>
 " Down
 nnoremap <C-j> <C-W><C-J>
 " Up
 nnoremap <C-k> <C-W><C-K>
 " Right
 nnoremap <C-l> <C-W><C-L>
+" Dvorak
 " Left
-nnoremap <C-h> <C-W><C-H>
-"inoremap <C-h> <Left>
+"nnoremap <C-h> <C-W><C-J>
+" Down
+"nnoremap <C-t> <C-W><C-J>
+"" Up
+"nnoremap <C-n> <C-W><C-K>
+"" Right
+"nnoremap <C-s> <C-W><C-L>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
