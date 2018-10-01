@@ -54,6 +54,8 @@ set backspace=2
 set confirm " Confirm save on exit
 set nowrap " lines will not wrap and only part of long lines will be displayed.
 set spell " Spell check
+hi clear SpellBad
+hi SpellBad cterm=underline
 set tabstop=4 " Short tabs
 set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
 set expandtab
@@ -90,15 +92,6 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 " Right
 nnoremap <C-l> <C-W><C-L>
-" Dvorak
-" Left
-"nnoremap <C-h> <C-W><C-J>
-" Down
-"nnoremap <C-t> <C-W><C-J>
-"" Up
-"nnoremap <C-n> <C-W><C-K>
-"" Right
-"nnoremap <C-s> <C-W><C-L>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
