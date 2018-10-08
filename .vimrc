@@ -61,7 +61,7 @@ set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< a
 set expandtab
 set list " Show trailing white spaces
 set listchars=trail:.,tab:>- " Show tabs as >-
-set cursorline " Highlight current line
+set cursorline " Highlight currenr line
 " Move backups and swaps to tmp
 set backup
 set swapfile
@@ -85,13 +85,13 @@ let g:yaml_formatter_indent_collection=1
 
 " Normal mode
 " Left
-nnoremap <C-h> <C-W><C-H>
-" Down
-nnoremap <C-j> <C-W><C-J>
-" Up
-nnoremap <C-k> <C-W><C-K>
-" Right
-nnoremap <C-l> <C-W><C-L>
+"nnoremap <C-h> <C-W><C-H>
+"" Down
+"nnoremap <C-j> <C-W><C-J>
+"" Up
+"nnoremap <C-k> <C-W><C-K>
+"" Right
+"nnoremap <C-l> <C-W><C-L>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
@@ -118,11 +118,15 @@ nnoremap <leader>bb %ma%x`ax
 nnoremap <leader>pl :PluginInstall<CR>
 " Refresh file
 nnoremap <leader>ed :edit<CR>
-
+" Vortex mode of split jump
+nnoremap <silent> <S-Right> <c-w>l
+nnoremap <silent> <S-Left> <c-w>h
+nnoremap <silent> <S-Up> <c-w>k
+nnoremap <silent> <S-Down> <c-w>j
 " Insert mode no-arrows navigation
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-l> <Right>
 
 " json autoformat
 nnoremap <leader>jf :execute '%!python -m json.tool'<CR>
