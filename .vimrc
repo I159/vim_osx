@@ -121,8 +121,8 @@ nnoremap <leader>ed :edit<CR>
 " Vortex mode of split jump
 nnoremap <silent> <S-Right> <c-w>l
 nnoremap <silent> <S-Left> <c-w>h
-nnoremap <silent> <S-Up> <c-w>k
-nnoremap <silent> <S-Down> <c-w>j
+nnoremap <silent> ¬ <c-w>k
+nnoremap <silent> ˚ <c-w>j
 " Insert mode no-arrows navigation
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
