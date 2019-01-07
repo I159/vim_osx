@@ -22,7 +22,7 @@ let g:jedi#rename_command = "<leader>jr"
 
 " Ale
 let g:ale_fixers = {'python': ['isort', 'black']}
-let g:ale_linters = {'python': ['prospector', 'pylint', 'pydocstyle']}
+let g:ale_linters = {'python': ['pylint', 'prospector']}
 let g:ale_completion_enabled = 1
 let g:ale_completion_delay = 1
 let g:airline#extensions#ale#enabled = 1

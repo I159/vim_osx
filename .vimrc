@@ -29,6 +29,8 @@ Plugin 'git@github.com:scrooloose/nerdtree.git'
 Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
 Plugin 'git@github.com:elzr/vim-json.git'
 Plugin 'git@github.com:tarekbecker/vim-yaml-formatter.git'
+Plugin 'git@github.com:mileszs/ack.vim'
+Plugin 'git@github.com:mgedmin/coverage-highlight.vim.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
@@ -121,8 +123,12 @@ nnoremap <leader>ed :edit<CR>
 " Vortex mode of split jump
 nnoremap <silent> <S-Right> <c-w>l
 nnoremap <silent> <S-Left> <c-w>h
-nnoremap <silent> ¬ <c-w>k
-nnoremap <silent> ˚ <c-w>j
+nnoremap <silent> ˆ <c-w>k
+nnoremap <silent> ´ <c-w>j
+nnoremap <leader>ss :!mks .vimsessions.vim<cr>
+nnoremap <leader>ls :source .vimsessions.vim<cr>
+nnoremap <leader>ac :Ack!<Space>
+nnoremap <leader>hc :HighlightCoverage<CR>
 " Insert mode no-arrows navigation
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
@@ -133,31 +139,12 @@ nnoremap <leader>jf :execute '%!python -m json.tool'<CR>
 " yaml autoformat
 nnoremap <leader>yf :YAMLFormat<CR>
 
-" System specific mappings
-if has('unix')
-	" Add line below
-	"nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-	" TODO: define for Linux
-	" Add line above
-	"nnoremap <A-O> :set paste<CR>m`<S-o><Esc>``:set nopaste<CR>
-	" Move line down <A-m>
-	nnoremap µ :m .+1<CR>==
-	" Move line up: <A-d>
-	nnoremap ∂ :m .-2<CR>==
-	" Paste from + register with <A-v>
-	inoremap √ <c-r><c-o>+
-elseif has('macunix')
-	" Add line below <FN-o>
-	"nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
-	" Add line above <FN-S-o>
-	"nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
-	" Move line down <A-m>
-	nnoremap µ :m .+1<CR>==
-	" Move line up <A-d>
-	nnoremap ∂ :m .-2<CR>==
-	" Paste from + register with <A-v>
-	inoremap √ <c-r><c-o>+
-endif
+" Move line down <A-m>
+nnoremap µ :m .+1<CR>==
+" Move line up: <A-d>
+nnoremap ∂ :m .-2<CR>==
+" Paste from + register with <A-v>
+inoremap √ <c-r><c-o>+
 
 " Remember last position of file
 if has("autocmd")
