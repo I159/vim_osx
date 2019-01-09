@@ -41,6 +41,10 @@ Plugin 'git@github.com:w0rp/ale.git'
 " Go specific
 Plugin 'git@github.com:fatih/vim-go.git'
 
+" JS specific
+Plugin 'git@github.com:pangloss/vim-javascript.git'
+Plugin 'git@github.com:ternjs/tern_for_vim.git'
+
 call vundle#end()            " required
 
 " ----------------------- settings -----------------------------

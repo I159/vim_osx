@@ -3,3 +3,4 @@ NetrwTreeListing*
 .vim/colors
 .vim/bundle
 .vim/autoload
+.vim/node_modules
