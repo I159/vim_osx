@@ -19,13 +19,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	rm -f $HOME/.vimrc
 	rm -rf $HOME/.vim
 
-	brew install macvim --with-override-system-vim
+    brew update
+    brew upgrade
+	brew install macvim
 	brew link macvim
 
 	ln -s $PWD/.vim $HOME/.vim
 	ln -s $PWD/.vimrc $HOME/.vimrc
 
-    sudo pip install jedi
+    sudo pip3 install jedi
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 fi
