@@ -1,4 +1,5 @@
 " ------------------- Settings ----------------------------
+echo PYTHON
 
 " 80 symbols color column
 set colorcolumn=89
@@ -21,7 +22,7 @@ let g:jedi#rename_command = "<leader>jr"
 
 " Ale
 let g:ale_fixers = {'python': ['isort', 'black']}
-let g:ale_linters = {'python': ['pylint', 'prospector']}
+let g:ale_linters = {'python': ['pylint', 'prospector', 'flake8']}
 let g:ale_completion_enabled = 1
 let g:ale_completion_delay = 1
 let g:airline#extensions#ale#enabled = 1
@@ -33,3 +34,5 @@ let g:ale_lint_on_enter = 1
 nnoremap <leader>fx :ALEFix <CR>
 " Ale go to definition
 nnoremap <leader>gd :ALEGoToDefinition <CR>
+" Ale go to a next error
+nnoremap <leader>aj :ALENext<CR>
