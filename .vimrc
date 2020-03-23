@@ -4,7 +4,9 @@
 " --------------------- Vundle Plugins -------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+set synmaxcol=128
+syntax sync minlines=256
+set lazyredraw
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -26,17 +28,17 @@ Plugin 'git@github.com:tpope/vim-surround.git'
 Plugin 'git@github.com:tpope/vim-eunuch.git'
 Plugin 'git@github.com:airblade/vim-gitgutter.git'
 Plugin 'git@github.com:scrooloose/nerdtree.git'
-Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
 Plugin 'git@github.com:elzr/vim-json.git'
 Plugin 'git@github.com:tarekbecker/vim-yaml-formatter.git'
 Plugin 'git@github.com:mileszs/ack.vim'
 Plugin 'git@github.com:mgedmin/coverage-highlight.vim.git'
+Plugin 'git@github.com:majutsushi/tagbar.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
 Plugin 'git@github.com:jeetsukumaran/vim-indentwise.git'
-Plugin 'git@github.com:vim-python/python-syntax.git'
 Plugin 'git@github.com:w0rp/ale.git'
+Plugin 'git@github.com:sheerun/vim-polyglot.git'
 
 " Go specific
 Plugin 'git@github.com:fatih/vim-go.git'
@@ -68,7 +70,7 @@ set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< a
 set expandtab
 set list " Show trailing white spaces
 set listchars=trail:.,tab:>- " Show tabs as >-
-set cursorline " Highlight currenr line
+"set cursorline " Highlight currenr line
 " Move backups and swaps to tmp
 set backup
 set swapfile
@@ -76,7 +78,7 @@ set dir=/tmp
 set backupdir=/tmp
 set directory=/tmp
 set pastetoggle=<f5> " Toggle paste mode
-set foldmethod=syntax " Fold by syntax blocks
+set foldmethod=manual
 set foldlevel=10 " Keep folds opened
 set scrolloff=50 " Keep cursor centered
 let g:pymode_rope = 0 "Disable rope
@@ -85,7 +87,7 @@ let mapleader = "," " Set leader
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
 " NERDTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build$', 'dist', 'vendor'] ", '\.lock$']
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build$', 'dist', 'vendor', '\.zip$']
 " Format yaml lists with extra
 let g:yaml_formatter_indent_collection=1
 " ----------------------- mappings ------------------------------
@@ -134,6 +136,7 @@ nnoremap <leader>ss :!mks .vimsessions.vim<cr>
 nnoremap <leader>ls :source .vimsessions.vim<cr>
 nnoremap <leader>ac :Ack!<Space>
 nnoremap <leader>hc :HighlightCoverage<CR>
+nnoremap <F8> :TagbarToggle<CR>
 " Insert mode no-arrows navigation
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
